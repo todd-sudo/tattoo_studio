@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="breadcumb-area bg-img-5 black-opacity">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcumb-wrap text-center">
+                    <h2>{{ post.title|truncatewords_html:5 }}</h2>
+                    <ul>
+                        <li><a href="{% url 'home' %}">Главная</a></li>
+                        <li>/</li>
+                        <li><a href="{% url 'posts_list' %}">Блог</a></li>
+                        <li>/</li>
+                        <li class="active">{{ post.title|truncatewords_html:5 }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="blog-details-area bg-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="blog-wrap">
+                            <div class="blog-img">
+                                <img src="{{ post.image.url }}" alt="">
+                            </div>
+                            <div class="blog-content">
+                                <ul class="blog-meta">
+                                    <li><a href="#"><i class="fa fa-clock-o"></i> {{ post.created_at|date:"j E Y" }}</a></li>
+                                    <li><a href="{{ post.author.get_absolute_url }}"><i class="fa fa-user"></i> {{ post.author }}</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> {{ post.comment_post.count }}</a></li>
+                                </ul>
+                                <h3>{{ post.title }}</h3>
+                            </div>
+                        </div>
+                        <div class="blog-details-wrap">
+                            <p>{{ post.content|safe }}</p>
+
+                            <div class="socila-link">
+                                <ul>
+                                    <li>Share :</li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="container single-post__comment">
+
+                            {% for comment in post.comment_post.all|slice:5 %}
+                            <ul>
+                                <li>
+                                    <div class="post-img">
+                                        <img src="/static/images/shop/1.png" alt="" style="padding: 4%; width: 98px">
+                                    </div>
+                                    <div class="single-post__comment__item__text">
+                                        <h5>{{ comment.name }}</h5>
+                                        <p style="max-width: 650px; word-wrap: break-word;">
+                                            {{ comment.message|safe }}
+                                        </p>
+                                        <p>{{ comment.create_at|date:"j E Y" }}</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            {% endfor %}
+
+                            </div>
+                            <br><br>
+                            <div class="blog-form">
+                                <h3>Написать комментарий</h3>
+                                <form action="{% url 'create_comment' pk=post.id %}" method="post">
+                                    {% csrf_token %}
+                                    <span>Имя</span>
+                                    {{ form.name }}
+                                    <span>Telegram Username</span>
+                                    {{ form.telegram_username }}
+                                    <span>Ваш комментарий</span>
+                                    {{ form.message }}
+                                    <button>Отправить</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12 col-sm-6">
+                {% include 'include/sidebar.html' %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="slider-area">
+    <div class="slider-active">
+        <div class="slider-items">
+            <img src="{% static 'images/slider/3.jpg' %}" alt="slider" class="slider">
+            <div class="single-slider single-slider2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-offset-2 col-sm-10 col-xs-12 col-md-7 col-md-offset-5 text-right">
+                            <h2>Якорь | Тату Симферополь</h2>
+                            <p>Атмосферная тату-студия в сердце Симферополя </p>
+                            <a href="{% url 'masters_list' %}">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-items">
+            <img src="{% static 'images/slider/2.jpg' %}" alt="slider" class="slider">
+            <div class="single-slider">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-10 col-xs-12">
+                            <h2>Якорь | Тату Симферополь</h2>
+                            <p>Атмосферная тату-студия в сердце Симферополя </p>
+                            <a href="{% url 'masters_list' %}">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-items">
+            <img src="{% static 'images/slider/1.jpg' %}" alt="slider" class="slider">
+            <div class="single-slider">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-10 col-xs-12">
+                            <h2>Якорь | Тату Симферополь</h2>
+                            <p>Атмосферная тату-студия в сердце Симферополя </p>
+                            <a href="{% url 'masters_list' %}">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="about-area ptb-130 bg-1 about-area3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <div class="about-wrap">
+                    <h3>Tattoo Shop Mission </h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mattis nibh dapibus lectus pharetra, eu pellentesque quam iaculis.</p>
+                    <p>Our Tattoo And Piercing Salon Is A Real Highlight Of The Whole Industry In The American Midwest! We’ve Been Opened As A Tattoo-Centric Institution For Years. During This Period Of Time We Were Able To Create Thousands Of Awesome Tattoos And Piercing For Thousands Of Happy Clients!</p>
+                    <div class="faq-wrap">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            General Inquiries
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p>Keep away from people who try to belittle your ambitions. Small peol always do that. Keep away from ast people who try to belittle your ambitions. Small peol always do that. Keep away from people who try to ast belittle your ambitions. Small peol always do that.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% for block in blocks %}
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"   id="heading{{ block.id }}">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ block.id }}" aria-expanded="false" aria-controls="collapseTwo">
+                                                {{ block.name }}
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse{{ block.id }}" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p style="color: white;">{{ block.description|safe }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 hidden-sm hidden-xs">
+                <div class="about-img">
+                    <img src="{% static 'images/about/4.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="quote-area black-opacity bg-img-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="quote-wrap">
+                    <p><span>Californian artist and tattooist Mark Walters </span>– also known as Permanent Mark – will exhibit his work at Buffalo Folk Creative Space in Palma de Mallorca. Alt model Aleata Illusion talks about how her love for horror and Japanese Yokai has influenced her tattoo journey so far. Meet Rotterdam tattooist Aura One, whose delicate tattoos are designed with the female body in mind.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

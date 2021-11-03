@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="breadcumb-area bg-img-5 black-opacity">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcumb-wrap text-center">
+                        <h2>{{ master.name }}</h2>
+                        <ul>
+                            <li><a href="{% url 'home' %}">Главная</a></li>
+                            <li>/</li>
+                            <li class="active">{{ master.name }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="single-team-area bg-1 ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-5">
+                    <div class="single-team-img">
+                        <img src="{{ master.image.url }}" alt="">
+                    </div>
+                    <div class="socil-icon">
+                        <ul>
+                            <li>Соц. сети :</li>
+                            {% if master.vk %}
+                                <li><a href="{{ master.vk }}"><i class="fa fa-vk"></i></a></li>
+                            {% endif %}
+                            {% if master.instagram %}
+                                <li><a href="{{ master.instagram }}"><i class="fa fa-instagram"></i></a></li>
+                            {% endif %}
+                            {% if master.telegram %}
+                                <li><a href="{{ master.telegram }}"><i class="fa fa-paper-plane"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-7">
+                    <div class="single-team-wrap">
+                        <h3>{{ master.name }}</h3>
+                        <span class="single-team">Тату-мастер</span>
+                        <p>{{ master.about_master|safe }}</p>
+
+                        {% for skill in skills %}
+                            <div class="progress-wrap">
+                                <p>{{ skill.name }}</p>
+                                <div class="progress">
+                                    <div class="progress-bar wow slideInLeft" style="width: {{ skill.value }}%;">
+                                        <span class="progress-persent"><span>{{ skill.value }}%</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+
+                    <a class="appoinment-btn" id="content-btn">Записаться к мастеру</a>
+                </div>
+            </div>
+
+            <div class="contact-area hidden">
+                <div class="container">
+                    <div class="content">
+                        <div class="col-md-12 col-sm-6 col-xs-12">
+                            <div class="contact-form">
+                                <form action="{% url 'record_to_master' master.id %}" method="post" id="cf">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-6 col-xs-12">
+                                            <span>Имя</span>
+                                            {{ form.name }}
+                                        </div>
+                                        <div class="col-md-6 col-xs-12">
+                                            <span>Telegram Username</span>
+                                            {{ form.telegram_username }}
+                                        </div>
+                                        <div class="col-md-12  col-xs-12">
+                                            <span>Сообщение</span>
+                                            {{ form.message }}
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <button type="submit">Отправить</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<script>
+
+let formBlock = document.querySelector('.contact-area');
+let btn = document.querySelector('.appoinment-btn');
+let openForm = document.querySelector('.open-form');
+
+btn.addEventListener('click', (e) => {
+    
+    e.preventDefault()
+    
+    if (formBlock.classList.contains('hidden')) {
+        formBlock.classList.replace('hidden', 'active-form');
+        // formBlock.classList.toggle('open-form');
+        // formBlock.classList.remove('close-form');
+    }
+    else if (!formBlock.classList.contains('hidden')) {
+        formBlock.classList.replace('active-form', 'hidden');
+        // formBlock.classList.remove('open-form');
+        // formBlock.classList.add('close-form');
+    }
+
+    
+})
+
+</script>
+{% endblock %}

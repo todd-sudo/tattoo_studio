@@ -1,0 +1,19 @@
+{% load sidebar %}
+
+<aside class="sidebar-wrap">
+    <div class="search-wrap widget">
+        <form action="{% url 'search' %}" method="get">
+            <input type="text" name="s" placeholder="Поиск...">
+            <button><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+
+    <div class="widget recent-post">
+        <h3 class="widget-title">Последние новости</h3>
+            {% get_last_news %}
+    </div>
+    <div class="widget tag-wrap">
+        <h3 class="widget-title">Теги</h3>
+            {% get_tags %}
+    </div>
+</aside>

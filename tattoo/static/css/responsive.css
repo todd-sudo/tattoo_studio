@@ -1,0 +1,398 @@
+/* (1366x768) WXGA Display */
+@media  screen and (min-width: 1366px) and (max-width: 1919px) {
+
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1197px) {
+.search-wrap ul li {
+    margin-left: 10px;
+}
+.single-slider h2 {
+    font-size: 45px;
+    line-height: 40px;
+}
+.wedo-icon {
+    padding: 43px 30px;
+}
+.pricing-content:before {
+    top: -200px;
+    width: 112%;
+}
+.booknow-wrap {
+    padding: 54px 0px;
+}
+.blog-content ul li{
+    margin-right: 5px;
+}
+.blog-content ul li a {
+    font-size: 11px;
+}
+.blog-content h3 {
+    font-size: 15px;
+}
+.footer-widget h2 {
+    font-size: 20px;
+}
+.wedo-area2 .wedo-wrap {
+    padding: 40px 15px 30px;
+}
+.fanfact-content h2 {
+    font-size: 24px;
+}
+.fanfact-content h3 {
+    font-size: 40px;
+    width: 110px;
+}
+.fanfact-icon i {
+    font-size: 75px;
+}
+.wedo-area3 .wedo-wrap{
+    padding: 0px;
+}
+.wedo-area3 {
+    padding-bottom: 100px;
+}
+.work-wrap h3 {
+    font-size: 17px;
+}
+
+}
+/* Normal desktop :991px. */
+@media (min-width: 768px) and (max-width: 991px) {
+.single-slider h2 {
+    font-size: 45px;
+    line-height: 40px;
+}
+.slider-items {
+    height: 450px;
+}
+.about-wrap {
+    padding: 23px 0px;
+}
+.pricing-content:before {
+    top: -225px;
+    width: 106%;
+    height: 185%;
+}
+.booknow-wrap {
+    padding: 100px 0px;
+}
+.footer-widget {
+    height: 290px;
+}
+.fanfact-content h2 {
+    font-size: 16px;
+}
+.fanfact-content h3 {
+    font-size: 25px;
+    width: 80px;
+}
+.fanfact-icon i {
+    font-size: 40px;
+    color: #fb9902;
+}
+.wedo-area3 {
+    padding-bottom: 100px;
+}
+.service-page-wrap{
+    padding-top: 30px;
+}
+.service-page-area {
+    padding: 100px 0px;
+}
+.quote-wrap p {
+    font-size: 15px;
+}
+.service-page-area2 {
+    padding: 70px 0;
+}
+.working-time-wrap ul li:before {
+    width: 40px;
+}
+.working-time-wrap {
+    padding: 114px 0;
+}
+.breadcumb-wrap h2 {
+    font-size: 30px;
+}
+.breadcumb-area {
+    height: 350px;
+}
+.footer-top {
+    padding: 100px 0px 50px;
+}
+.search-wrap ul li > ul {
+    width: 290px;
+}
+.search-wrap ul li {
+    padding: 25px 0px;
+}
+.blog-details-area .sidebar-wrap{
+    margin-top: 70px;
+}
+.blog-details-area {
+    padding: 100px 0px;
+}
+.contact-form textarea {
+    height: 200px;
+}
+.contact-area{
+  padding-top: 100px;
+}
+.error-area{
+  padding: 100px 0px;
+}
+.checkout-area,.cart-area {
+    padding: 100px 0px 70px;
+}
+.cart-form-wrap {
+    margin-bottom: 30px;
+}
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+.container{width: 100%}
+.responsive-menu-wrap .slicknav_nav {
+    width: 290px;
+    top: 17px;
+}
+.xs-mb-30{margin-bottom: 30px;}
+.slider-items {
+    height: 450px;
+}
+.single-slider h2 {
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 20px;
+}
+.single-slider p {
+    font-size: 14px;
+    padding: 0;
+}
+.single-slider2.single-slider p{
+    padding:0;
+}
+.ptb-130 {
+    padding: 100px 0px;
+}
+.about-wrap {
+    padding: 0;
+}
+.section-title h2 {
+    font-size: 25px;
+}
+.section-title p {
+    font-size: 14px;
+}
+.wedo-icon {
+    padding: 43px 30px;
+}
+.project-menu button {
+    margin-bottom: 8px;
+}
+.blog-area,.project-area,.team-area,.pricing-area {
+    padding: 100px 0px 70px;
+}
+.pricing-content:before {
+    width: 113%;
+}
+.booknow-wrap {
+    padding: 100px 0px;
+}
+.instragram ul li {
+    width: 31%;
+}
+.copyright p{
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.socil-media-icon,.copyright{
+    text-align: center;
+}
+a#scrollUp{
+    left: auto;
+    right: 10px;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+}
+.wedo-img {
+    padding: 40px 0;
+    text-align: center;
+}
+.wedo-area2 .wedo-wrap {
+    padding: 40px 14px 30px;
+}
+.fanfact-area{
+    padding: 100px 0px 70px;
+}
+.fanfact-wrap {
+    margin-bottom: 30px;
+}
+.fanfact-content h2 {
+    font-size: 20px;
+}
+.fanfact-content h3 {
+    font-size: 40px;
+    width: 100px;
+}
+.fanfact-icon i {
+    font-size: 65px;
+}
+.test-items p {
+    font-size: 14px;
+    padding: 0px 0px;
+}
+.wedo-area3 .wedo-wrap{
+    padding: 0px;
+}
+.wedo-area3{
+    padding-bottom: 70px;
+}
+.quote-wrap p {
+    font-size: 15px;
+    padding: 0;
+}
+.breadcumb-wrap h2 {
+    font-size: 35px;
+}
+.breadcumb-area {
+    height: 350px;
+}
+.service-page-area {
+    padding: 100px 0px 70px;
+}
+.search-wrap ul li {
+    padding: 19px 0px;
+}
+.responsive-menu-wrap .slicknav_menu {
+    padding: 15px 0;
+}
+.service-page-wrap {
+    margin-top: 40px;
+}
+.service-page-area.service-page-area2 {
+    padding: 70px 0px;
+}
+.working-time-wrap {
+    padding: 100px 0 95px;
+}
+.single-team-img {
+    height: 453px !important;
+}
+.single-team-wrap {
+    margin-top: 50px;
+}
+.socil-icon ul li {
+    margin-right: 0;
+}
+.progress-wrap {
+    width: 100%;
+}
+.sidebar-wrap{
+    margin-top: 40px;
+}
+.search-wrap ul li > ul {
+    right: -53px;
+    width: 290px;
+}
+.revarce-section{
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+.blog-details-area {
+    padding: 100px 0px;
+}
+.blog-details-wrap blockquote {
+    padding: 30px 10px 30px 25px;
+    font-size: 15px;
+}
+.contact-form{
+    margin-bottom: 50px;
+}
+.contact-form textarea {
+    height: 150px;
+}
+.contact-wrap ul li {
+    padding: 30px 20px 30px 80px;
+}
+.contact-area{
+  padding-top: 100px;
+}
+.error-area{
+  padding: 100px 0px;
+}
+.error-wrap ul li {
+    margin: 3px 3px;
+}
+.checkout-area,.cart-area {
+    padding: 100px 0px 70px;
+}
+.cart-form-wrap {
+    margin-bottom: 30px;
+}
+.checkout-title {
+    font-size: 16px;
+}
+.shoping-cart-quantity input {
+    width: 50px;
+    height: 30px;
+}
+.shoping-cart-img {
+    display: none;
+}
+.shoping-cart-btn a {
+    padding: 10px 13px;
+    margin-left: 0;
+}
+.single-slider {
+    padding-top: 65px;
+}
+}
+
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.container {width:450px;}
+.responsive-menu-wrap .slicknav_nav {
+    width: 450px;
+}
+.wedo-info {
+    padding: 30px 0px;
+}
+.section-title p {
+    font-size: 16px;
+}
+.pricing-content:before {
+    width: 94%;
+}
+}
+/* small mobile :600px. */
+@media  (min-width: 600px) and (max-width: 767px) {
+.container{width:600px;}
+.col-2{
+    float: left;
+    width: 50%;
+}
+.responsive-menu-wrap .slicknav_nav {
+    width: 570px;
+    top: 25px;
+}
+.wedo-info {
+    padding: 43px 0px;
+}
+.pricing-content:before {
+    width: 117.4%;
+}
+.footer-widget {
+    height: 300px;
+}
+.responsive-menu-wrap .slicknav_menu {
+    padding: 18px 0;
+}
+.search-wrap ul li {
+    padding: 21px 0px;
+}
+}

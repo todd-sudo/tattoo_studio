@@ -1,0 +1,52 @@
+{% load static %}
+
+<header class="header-area" id="sticky-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="header-bottom">
+                     <div class="row">
+                        <div class="col-md-3 col-sm-9 col-xs-6">
+                            <div class="logo">
+                                <a href="{% url 'home' %}">
+                                    <img src="{% static 'images/logo.png' %}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8 hidden-sm hidden-xs">
+                            <div class="mainmenu text-right">
+                                <ul id="navigation">
+                                    <li class="{% if request.path == '/' %}active{% endif %}"><a href="{% url 'home' %}">Главная</a></li>
+                                    <li class="{% if request.path == '/posts-list/' %}active{% endif %}"><a href="{% url 'posts_list' %}">Блог</a></li>
+                                    <li class="{% if request.path == '/masters/' %}active{% endif %}"><a href="{% url 'masters_list' %}">Мастера</a></li>
+                                    <li class="{% if request.path == '/gallery/' %}active{% endif %}"><a href="{% url 'gallery' %}">Галерея</a></li>
+                                    <li class="{% if request.path == '/contact/' %}active{% endif %}"><a href="{% url 'contact' %}">Контакты</a></li>
+                                    <li class="{% if request.path == '/about/' %}active{% endif %}"><a href="{% url 'about' %}">О нас</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-2 col-xs-4">
+                            <div class="search-wrap text-right">
+                                <ul>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-search"></i></a>
+                                        <ul>
+                                            <li>
+                                                <form action="{% url 'search' %}" method="get">
+                                                    <input type="text" name="s" placeholder="Поиск...">
+                                                    <button><i class="fa fa-search"></i></button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class=" col-xs-2 col-sm-1 hidden-md hidden-lg">
+                            <div class="responsive-menu-wrap floatright"></div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

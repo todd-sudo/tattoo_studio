@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="breadcumb-area bg-img-5 black-opacity">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="breadcumb-wrap text-center">
+                    <h2>{{ article.title|truncatewords_html:5 }}</h2>
+                    <ul>
+                        <li><a href="{% url 'home' %}">Главная</a></li>
+                        <li>/</li>
+                        <li><a href="{% url 'posts_list' %}">О нас</a></li>
+                        <li>/</li>
+                        <li class="active">{{ article.title|truncatewords_html:5 }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="blog-details-area bg-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="blog-wrap">
+                            <div class="blog-img">
+                                <img src="{{ article.image.url }}" alt="">
+                            </div>
+                            <div class="blog-content">
+                                <ul class="blog-meta"></ul>
+                                <h3>{{ article.title }}</h3>
+                            </div>
+                        </div>
+                        <div class="blog-details-wrap">
+                            <p>{{ article.content|safe }}</p>
+
+                            <div class="socila-link">
+                                <ul>
+                                    <li>Share :</li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12 col-sm-6">
+                {% include 'include/sidebar.html' %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

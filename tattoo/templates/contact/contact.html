@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="breadcumb-area bg-img-5 black-opacity">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcumb-wrap text-center">
+                        <h2>Контакты</h2>
+                        <ul>
+                            <li><a href="{% url 'home' %}">Главная</a></li>
+                            <li>/</li>
+                            <li class="active">Контакты</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-area bg-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <div class="contact-form">
+                        <div class="cf-msg"></div>
+                        <form action="{% url 'send' %}" method="post" id="cf">
+                            {% csrf_token %}
+
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <span>Имя</span>
+                                    {{ form.name }}
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <span>Telegram Username</span>
+                                    {{ form.telegram_username }}
+                                </div>
+                                <div class="col-md-12  col-xs-12">
+                                    <span>Сообщение</span>
+                                    {{ form.message }}
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button type="submit">Отправить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="contact-wrap">
+                        <ul>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                Phone number
+                                <p>
+                                    <span>+ (0012) 123 456 789</span>
+                                    <span>+ (0012) 123 456 789</span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope"></i>
+                                Email Id
+                                <p>
+                                    <span>info145@gmail.com</span>
+                                    <span>info145@gmail.com</span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="fa fa-location-arrow"></i>
+                                Location
+                                <p>
+                                    <span>+227 Marion Street Address Here Columbia, SC 29201</span>
+                                </p>
+                            </li>
+                            <br>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

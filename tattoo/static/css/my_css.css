@@ -1,0 +1,20 @@
+
+.hidden {
+    display: none;
+}
+
+.active-form {
+    visibility: visible;
+}
+
+.open-form {
+    margin-top: -40px;
+    transition: 0.8s;
+}
+
+.close-form {
+    margin: 0;
+}
+
+
+

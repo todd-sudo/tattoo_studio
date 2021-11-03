@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="breadcumb-area bg-img-5 black-opacity">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcumb-wrap text-center">
+                        <h2>PAGE NOT FOUND</h2>
+                        <ul>
+                            <li><a href="{% url 'home' %}">Главная</a></li>
+                            <li>/</li>
+                            <li class="active">404</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="error-area bg-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="error-wrap">
+                        <img src="{% static 'images/404.png' %}" alt="">
+                        <h3>Запрошенная страница не может быть найдена!</h3>
+                        <p>Возможно, вы неправильно ввели адрес или страницы не существует</p>
+                        <ul>
+                            <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> На главную</a></li>
+                            <li><a href="{% url 'contact' %}"><i class="fa fa-envelope"></i> Сообщить об ошибке</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
